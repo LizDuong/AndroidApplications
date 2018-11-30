@@ -9,62 +9,156 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/course"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ITE 5333 Android App Development 1"/>
+        android:text="ITE 5333 Android App Development 1"
+        android:layout_marginTop="50dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <TextView
+        android:id="@+id/student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Elizabeth Duong N012594549"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Elizabeth Duong N012594549"
+        app:layout_constraintTop_toBottomOf="@id/course"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
-        <Button
-            android:id="@+id/alarm"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Alarm"
-            android:text="Alarm" />
+    <TextView
+        android:id="@+id/prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="What would you like to do?"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@id/student"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginBottom="25dp"/>
 
-        <Button
-            android:id="@+id/map"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Map"
-            android:text="Map"
-            app:layout_constraintTop_toBottomOf="@+id/browse" />
+    <TableLayout
+        android:id="@+id/apps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintTop_toBottomOf="@+id/prompt"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-        <Button
-            android:id="@+id/browse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Browse"
-            android:text="Browse"
-            app:layout_constraintTop_toBottomOf="@+id/call" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/alarmIcon"
+                android:layout_height="50dp"
+                android:onClick="Alarm"
+                android:src="@drawable/alarm"
+                />
+            <Button
+                android:id="@+id/alarm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Alarm"
+                android:text="Set Alarm" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/call"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Call"
-            android:text="Call"
-            app:layout_constraintTop_toBottomOf="@+id/camera" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/cameraIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:cropToPadding="false"
+                android:onClick="Camera"
+                android:src="@drawable/camera"/>
+            <Button
+                android:id="@+id/camera"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Camera"
+                android:text="Take Photo"
+                app:layout_constraintTop_toBottomOf="@+id/alarm" />
+        </TableRow>
 
-        <Button
-            android:id="@+id/camera"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="Camera"
-            android:text="Camera"
-            app:layout_constraintTop_toBottomOf="@+id/alarm" />
-    </LinearLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/mediaIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:cropToPadding="false"
+                android:onClick="Media"
+                android:src="@drawable/media"/>
+            <Button
+                android:id="@+id/media"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Media"
+                android:text="Play Media"
+                app:layout_constraintTop_toBottomOf="@+id/camera" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/mapIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:cropToPadding="false"
+                android:onClick="Map"
+                android:src="@drawable/pin"/>
+            <Button
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Map"
+                android:text="Find Location"
+                app:layout_constraintTop_toBottomOf="@+id/media" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/browseIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:cropToPadding="false"
+                android:onClick="Browse"
+                android:src="@drawable/search"/>
+            <Button
+                android:id="@+id/browse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Browse"
+                android:text="Go to Website"
+                app:layout_constraintTop_toBottomOf="@+id/map" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/callIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:cropToPadding="false"
+                android:onClick="Call"
+                android:src="@drawable/phone"/>
+            <Button
+                android:id="@+id/call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="Call"
+                android:text="Make Call"
+                app:layout_constraintTop_toBottomOf="@+id/browse" />
+        </TableRow>
+
+    </TableLayout>
 
 </android.support.constraint.ConstraintLayout>

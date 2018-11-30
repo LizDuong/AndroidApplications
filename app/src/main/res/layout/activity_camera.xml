@@ -5,9 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
-    <uses-permission-sdk-23 android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    // need camera permission
     <ImageView
         android:id="@+id/imageview"
         android:layout_width="wrap_content"
@@ -21,10 +19,8 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="takePicture"
         android:text="Take a Picture"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"/>
-
-
+    
 </android.support.constraint.ConstraintLayout>

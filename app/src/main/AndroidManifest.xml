@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.liz.courseapplication">
 
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity">
+
+            <!-- android:name=".MainActivity" -->
+            <!-- android:label="@string/app_name" -->
+            <!-- android:theme="@style/AppTheme.NoActionBar"> -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                // send plain text to this app
+                <action android:name="android.intent.action.SEND" />
 
+                <data android:mimeType="text/plain" />
+
+                <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AlarmActivity"
+            android:label="Alarm"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CameraActivity"
+            android:label="Camera"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MediaActivity" android:label="Media" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".BrowseActivity" android:label="Browse" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".CallActivity" android:label="Call" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".MapActivity" android:label="Map" android:parentActivityName=".MapActivity"/>
     </application>
 
 </manifest>

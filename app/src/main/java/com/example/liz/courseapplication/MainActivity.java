@@ -3,6 +3,7 @@ package com.example.liz.courseapplication;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,24 +12,23 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView textView;
+
+    //    filter intent to receive data
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        textView = findViewById(R.id.tv);
+        Intent intent = getIntent();
+        if (intent.hasExtra(Intent.EXTRA_TEXT))
+            textView.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
+        else
+            textView.setText("No extra text was from in the intent.");
     }
 
     @Override
@@ -53,51 +53,32 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void Home(View v) {
-        setContentView(R.layout.activity_main);
-    }
-
     public void Alarm(View v) {
-        setContentView(R.layout.activity_alarm);
+        Intent intent = new Intent(MainActivity.this,AlarmActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     public void Camera(View v) {
-        setContentView(R.layout.activity_camera);
+        Intent intent = new Intent(MainActivity.this,CameraActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+    public void Media(View v) {
+        Intent intent = new Intent(MainActivity.this,MediaActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     public void Call(View v) {
-        setContentView(R.layout.activity_call);
-    }
-
-    public void Phone(View v) {
-        Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + "Your Phone_number"));
-        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this,CallActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     public void Browse(View v) {
-        setContentView(R.layout.activity_browse);
-    }
-
-    public void Internet(View v) {
-        final EditText editText = findViewById(R.id.urlText);
-
-        String url = editText.getText().toString();
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-        startActivity(intent);
+        Intent intent = new Intent(MainActivity.this,BrowseActivity.class);
+        MainActivity.this.startActivity(intent);
     }
 
     public void Map(View v) {
-        setContentView(R.layout.activity_map);
+        Intent intent = new Intent(MainActivity.this,MapActivity.class);
+        MainActivity.this.startActivity(intent);
     }
-
-    public void Directions(View v) {
-        Uri gmmIntentUri = Uri.parse("geo:0,0?q=restaurants");
-
-        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-        mapIntent.setPackage("com.google.android.apps.maps");
-        startActivity(mapIntent);
-    }
-
-
-
 }
