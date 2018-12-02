@@ -28,24 +28,18 @@ public class MainActivity extends AppCompatActivity {
         if (intent.hasExtra(Intent.EXTRA_TEXT))
             textView.setText(intent.getStringExtra(Intent.EXTRA_TEXT));
         else
-            textView.setText("No extra text was from in the intent.");
+            textView.setText("");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -79,6 +73,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void Map(View v) {
         Intent intent = new Intent(MainActivity.this,MapActivity.class);
+        MainActivity.this.startActivity(intent);
+    }
+
+
+    public void Email(View v) {
+        Intent intent = new Intent(MainActivity.this,EmailActivity.class);
         MainActivity.this.startActivity(intent);
     }
 }

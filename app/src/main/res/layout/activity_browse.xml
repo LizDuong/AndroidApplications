@@ -5,22 +5,33 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter a url address."
+            app:layout_constraintBottom_toTopOf="@id/urlText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="100sp"/>
 
         <EditText
             android:id="@+id/urlText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:ems="15"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent" />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <Button
             android:id="@+id/browse"
             style="@style/ActivityButton"
-            app:layout_constraintTop_toBottomOf="@id/urlText"
             android:text="Browse"
-            android:onClick="browse_clicked"/>
+            android:onClick="browse_clicked"
+            app:layout_constraintTop_toBottomOf="@id/urlText"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
 
 
 </android.support.constraint.ConstraintLayout>

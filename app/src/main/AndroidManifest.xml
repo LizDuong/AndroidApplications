@@ -16,17 +16,47 @@
                 <action android:name="android.intent.action.MAIN" />
                 // send plain text to this app
                 <action android:name="android.intent.action.SEND" />
+
                 <data android:mimeType="text/plain" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AlarmActivity" android:label="Set Alarm" android:parentActivityName=".MainActivity" />
-        <activity android:name=".CameraActivity" android:label="Take Photo" android:parentActivityName=".MainActivity" />
-        <activity android:name=".MediaActivity" android:label="Play Media" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".BrowseActivity" android:label="Browse Internet" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CallActivity" android:label="Make Call" android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MapActivity" android:label="Find Location" android:parentActivityName=".MapActivity"/>
+        <activity
+            android:name=".AlarmActivity"
+            android:label="Alarm App"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CameraActivity"
+            android:label="Camera App"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MediaActivity"
+            android:label="Media App"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".BrowseActivity"
+            android:label="Browsing App"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".CallActivity"
+            android:label="Calling App"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MapActivity"
+            android:label="Map App"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".EmailActivity"
+            android:label="Email App"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
+                <data android:scheme="mailto" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

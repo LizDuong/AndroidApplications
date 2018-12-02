@@ -6,23 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".MediaActivity">
 
-
-    <Button
-        android:id="@+id/button"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Media"
-        android:onClick="media_clicked"
-        app:layout_constraintTop_toBottomOf="@id/option"
+        android:text="What type of file would you like to play?"
+        app:layout_constraintBottom_toTopOf="@+id/option"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="40dp"/>
 
     <RadioGroup
         android:id="@+id/option"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
             android:id="@+id/audio"
@@ -37,5 +37,16 @@
             android:text="Video"
             app:layout_constraintLeft_toRightOf="@id/audio"/>
     </RadioGroup>
+
+    <Button
+        android:id="@+id/button"
+        style="@style/ActivityButton"
+        android:text="Play Media"
+        android:onClick="media_clicked"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/option"
+        android:layout_marginTop="30dp"
+        android:padding="10dp"/>
 
 </android.support.constraint.ConstraintLayout>

@@ -39,7 +39,7 @@ public class AlarmActivity extends AppCompatActivity {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void alarm_clicked(View view) {
+    public void alarm_clicked(View v) {
         int hr = clock.getHour();
         int min = clock.getMinute();
 
