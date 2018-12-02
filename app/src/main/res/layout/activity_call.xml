@@ -5,24 +5,145 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/tel"
-        android:inputType="number"
+    <LinearLayout
+        android:id="@+id/num_pad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:ems="10"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
 
-    <Button
-        android:id="@+id/call"
+        <EditText
+            android:id="@+id/calOutput"
+            android:layout_width="match_parent"
+            android:layout_height="159dp"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:text="0.00"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/darker_gray">
+
+            <Button
+                android:id="@+id/btn_num7"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num7" />
+
+            <Button
+                android:id="@+id/btn_num8"
+                android:onClick="btn_clicked"
+                style="@style/style_calc_btn"
+                android:text="@string/btn_num8" />
+
+            <Button
+                android:id="@+id/btn_num9"
+                android:onClick="btn_clicked"
+                style="@style/style_calc_btn"
+                android:text="@string/btn_num9" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/darker_gray">
+
+            <Button
+                android:id="@+id/btn_num4"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num4" />
+
+            <Button
+                android:id="@+id/btn_num5"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num5" />
+
+            <Button
+                android:id="@+id/btn_num6"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num6" />
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/darker_gray">
+
+            <Button
+                android:id="@+id/btn_num1"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num1" />
+
+            <Button
+                android:id="@+id/btn_num2"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num2" />
+
+            <Button
+                android:id="@+id/btn_num3"
+                style="@style/style_calc_btn"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num3" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
+            android:background="@android:color/darker_gray">
+
+            <Button
+                android:id="@+id/btn_num0"
+                style="@style/style_calc_btn"
+                android:layout_weight="2"
+                android:onClick="btn_clicked"
+                android:text="@string/btn_num0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tel"
-        android:text="Call"
-        android:onClick="call_clicked"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/num_pad"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:layout_marginTop="10dp">
 
+        <Button
+            android:id="@+id/call"
+            style="@style/ActivityButton"
+            android:text="Call Now"
+            android:onClick="btn_call"/>
+        <Button
+            android:id="@+id/btn_clear"
+            style="@style/ActivityButton"
+            android:onClick="btn_clear"
+            android:text="Reset"/>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

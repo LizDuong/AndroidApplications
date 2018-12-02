@@ -13,6 +13,49 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppIcon">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">3dp</item>
+        <item name="android:tint">@color/colorWhite</item>
+        <item name="android:background">@drawable/roundedcorner</item>
+    </style>
+
+    <style name="AppText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:paddingLeft">7dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="TableRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:background">@drawable/roundedcorner</item>
+    </style>
+
+    <style name="ActivityButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:background">@drawable/roundedbutton</item>
+    </style>
+
+    <style name="style_calc_btn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#ddd</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_margin">1dp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
