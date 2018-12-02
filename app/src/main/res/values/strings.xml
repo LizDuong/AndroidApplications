@@ -11,4 +11,6 @@
     <string name="btn_num9">9</string>
     <string name="btn_num8">8</string>
     <string name="btn_num7">7</string>
+    <string name="btn_reset">Reset</string>
+    <string name="btn_call_now">Call Now</string>
 </resources>
